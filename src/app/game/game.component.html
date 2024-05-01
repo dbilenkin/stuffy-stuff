@@ -1,0 +1,25 @@
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <label for="word">Enter a word: </label>
+    <input type="text" id="word" name="word" [(ngModel)]="enteredWord" required>
+    <button class="submit-button" type="submit">Submit</button>
+  </form>
+</div>
+
+<div [ngSwitch]="guessState">
+  <div *ngSwitchCase="'noGuess'">
+    <p>Guess the word!</p>
+  </div>
+  <div *ngSwitchCase="'incorrect'">
+    <p>Sorry, {{ lastGuess }} is not the word.</p>
+    <p>{{ lengthMessage }}</p>
+    <p>{{ charactersInWordMessage }}</p>
+    <p>{{ correctPositionMessage }}</p>
+    <p>Try again!</p>
+  </div>
+  <div *ngSwitchCase="'correct'">
+    <p>You got it! {{ targetWord }} is the target word!</p>
+  </div>
+</div>
+
+<button (click)="startNewGame()" [ngStyle]="{'border': 'none'}" [ngClass]="{'new-game-button': true}">New Game</button>

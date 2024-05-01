@@ -1,0 +1,35 @@
+/* game.component.css */
+.new-game-button {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.new-game-button:hover {
+  background-color: darkblue;
+}
+
+.submit-button {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+input[type="text"]:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #007bff; /* Change border color when input is focused */
+}
